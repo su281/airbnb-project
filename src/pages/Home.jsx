@@ -154,19 +154,24 @@ export default function Home({ searchTerm }) {
       </section>
 
       {/* Featured Destinations */}
-      <section className="max-w-6xl mx-auto mt-10 px-4 overflow-hidden relative">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">Featured Destinations</h2>
-        <motion.div className="flex gap-4 py-2 w-max" animate={{ x: ["0%", "-45%"] }} transition={{ repeat: Infinity, duration: 6, ease: "linear" }}>
-          {featuredDestinations.map((item, idx) => (
-            <motion.div key={idx} className="relative min-w-[220px] sm:min-w-[250px] rounded-lg overflow-hidden shadow-lg cursor-pointer flex-shrink-0 group" whileHover={{ scale: 1.03 }}>
-              <img src={item.image} alt={item.title} className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-3 text-white font-semibold text-lg">
-                {item.location.split(",")[0]}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
+      <section className="max-w-6xl mx-auto mt-10 px-4 overflow-hidden relative">
+        <h2 className="text-2xl font-bold mb-6 text-gray-800">Featured Destinations</h2>
+        <motion.div 
+            className="flex gap-4 py-2 w-max" 
+            animate={{ x: ["0%", "-45%"] }} 
+            transition={{ repeat: Infinity, duration: 14, ease: "linear" }} 
+            // ^^^^ यहाँ duration को 6 से बढ़ाकर 12 कर दिया गया है
+        >
+          {featuredDestinations.map((item, idx) => (
+            <motion.div key={idx} className="relative min-w-[220px] sm:min-w-[250px] rounded-lg overflow-hidden shadow-lg cursor-pointer flex-shrink-0 group" whileHover={{ scale: 1.03 }}>
+              <img src={item.image} alt={item.title} className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-3 text-white font-semibold text-lg">
+                {item.location.split(",")[0]}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
 
       {/* Properties Grid */}
       <div className="max-w-6xl mx-auto mt-12 p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -203,7 +208,7 @@ export default function Home({ searchTerm }) {
   <motion.div
     className="flex gap-4 py-2 w-max"
     animate={{ x: [0, -1800] }}
-    transition={{ repeat: Infinity, duration: 8, ease: "linear" }} // <- slower
+    transition={{ repeat: Infinity, duration: 12, ease: "linear" }} // <- slower
   >
     {topHosts.map((host, idx) => (
       <motion.div
@@ -266,9 +271,9 @@ export default function Home({ searchTerm }) {
           <div>
             <h3 className="text-xl font-bold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li>Email: info@sunitajaiswal.com</li>
+              <li>Email: sj414435@gmail.com</li>
               <li>Phone: +91 9918528638</li>
-              <li>Address: Noida, India</li>
+              <li>Address: Delhi Noida, India</li>
             </ul>
           </div>
           <div>
